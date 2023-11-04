@@ -14,8 +14,10 @@
 
   - sensor-filters: sudo apt install ros-noetic-sensor-filters
   - robot-body-filter: sudo apt install ros-noetic-robot-body-filter
+  - \*[point_cloud_io](https://github.com/ANYbotics/point_cloud_io): from ANYbotics
   - message-logger: from ANYbotics
-  - kindr/kindr_ros
+  - kindr/kindr_ros: from ANYbotics
+  - (Note: \* means optional, which is required by demos)
 
 - [elevation_mapping_cupy/plane_segmentation](https://github.com/leggedrobotics/elevation_mapping_cupy): NOTE that we only need
   convex_plane_decomposition_ros package (and its dependencies), DO NOT build the elevation_mapping_cupy package
