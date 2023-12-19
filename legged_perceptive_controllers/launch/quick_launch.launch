@@ -3,7 +3,8 @@
 <launch>
     <arg name="simulation" default="true"/>
     <!-- Sim/HW -->
-    <include if="$(arg simulation)" file="$(find legged_perceptive_description)/launch/empty_world.launch">
+    <!-- <include if="$(arg simulation)" file="$(find legged_perceptive_description)/launch/empty_world.launch"> -->
+    <include if="$(arg simulation)" file="$(find legged_perceptive_description)/launch/unit_boxes_world.launch">
     </include>
     <!-- <include unless="$(arg simulation)" file="$(find legged_unitree_hw)/launch/legged_unitree_hw.launch">
     </include> -->
