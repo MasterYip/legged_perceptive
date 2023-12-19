@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<launch>
+    <arg name="simulation" default="true"/>
+    <!-- Sim/HW -->
+    <include if="$(arg simulation)" file="$(find legged_perceptive_description)/launch/empty_world.launch">
+    </include>
+    <!-- <include unless="$(arg simulation)" file="$(find legged_unitree_hw)/launch/legged_unitree_hw.launch">
+    </include> -->
+
+    <!-- Rviz -->
+    <node name="rviz" pkg="rviz" type="rviz"
+          args="-d $(find legged_perceptive_controllers)/config/rviz.rviz"/>
+
+    <!-- JoyStick -->
+    <include file="$(find legged_controllers)/launch/joy_teleop.launch">
+    </include>
+
+    <!-- Controller -->
+    <node pkg="legged_perceptive_controllers" type="timed_roslaunch.sh" 
+        args="2 legged_perceptive_controllers load_controller.launch cheater:=false"
+        name="timed_roslaunch" output="screen">
+    </node>
+
+    <!-- Mgr -->
+    <node pkg="rqt_controller_manager" type="rqt_controller_manager" name="ctrl_manager"/>
+</launch>

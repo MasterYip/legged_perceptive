@@ -9,10 +9,21 @@
     <xacro:include filename="$(find legged_perceptive_description)/urdf/sensor_t265.xacro"/>
     <xacro:include filename="$(find legged_perceptive_description)/urdf/mid360.xacro"/>
 
-
-    <!--    <xacro:sensor_d435 name="front_camera" topics_ns="front_camera" parent="base">-->
-    <!--        <origin xyz="0.36 -0.0 0.01" rpy="3.141 0.38 0"/>-->
-    <!--    </xacro:sensor_d435>-->
+    <!-- This is commented by origin author -->
+    <!-- <xacro:sensor_d435 name="front_camera" topics_ns="front_camera" parent="base">
+        <origin xyz="0.36 -0.0 0.01" rpy="3.141 0.38 0"/>
+    </xacro:sensor_d435> -->
+    <!-- kinect -->
+    <xacro:include filename="$(find legged_perceptive_description)/urdf/kinect.xacro" />
+    <xacro:property name="kinect_offset_x" value="0.3" />
+    <xacro:property name="kinect_offset_y" value="0" />
+    <xacro:property name="kinect_offset_z" value="0" />
+    <joint name="kinect_joint" type="fixed">
+        <origin xyz="${kinect_offset_x} ${kinect_offset_y} ${kinect_offset_z}" rpy="0 0 0" />
+        <parent link="base"/>
+        <child link="kinect_link"/>
+    </joint>
+    <xacro:kinect_camera prefix="kinect"/>
 
     <xacro:sensor_t265 name="tracking_camera" topics_ns="tracking_camera" parent="base">
         <origin xyz="0.16 0 0.085" rpy="0 -1.04 0"/>

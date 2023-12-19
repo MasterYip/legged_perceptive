@@ -5,14 +5,9 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /FilteredMap1
-        - /FilteredMap1/Status1
         - /CurrentState1/Namespaces1
-        - /OptimizedStateTrajectory1
-        - /FootPlacement1
         - /FootPlacement1/Namespaces1
-        - /MarkerArray1
-        - /MarkerArray2
+        - /DepthCloud1/Auto Size1
       Splitter Ratio: 0.7029411792755127
     Tree Height: 676
   - Class: rviz/Selection
@@ -32,7 +27,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: DepthCloud
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -186,47 +181,25 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        front_camera_bottom_screw_frame:
+        kinect_frame_optical:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        front_camera_color_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_camera_color_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_camera_left_ir_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_camera_left_ir_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_camera_link:
+        kinect_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        front_camera_right_ir_frame:
+        livox_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        front_camera_right_ir_optical_frame:
+          Value: true
+        livox_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         tracking_camera_accel_optical_frame:
           Alpha: 1
           Show Axes: false
@@ -314,7 +287,7 @@ Visualization Manager:
       Marker Topic: /convex_plane_decomposition_ros/boundaries
       Name: MarkerArray
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -325,6 +298,70 @@ Visualization Manager:
         {}
       Queue Size: 100
       Value: false
+    - Alpha: 1
+      Auto Size:
+        Auto Size Factor: 1
+        Value: true
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/DepthCloud
+      Color: 255; 255; 255
+      Color Image Topic: ""
+      Color Transformer: RGB8
+      Color Transport Hint: raw
+      Decay Time: 0
+      Depth Map Topic: /kinect/depth/image_raw
+      Depth Map Transport Hint: raw
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: DepthCloud
+      Occlusion Compensation:
+        Occlusion Time-Out: 30
+        Value: false
+      Position Transformer: XYZ
+      Queue Size: 5
+      Selectable: true
+      Size (Pixels): 3
+      Style: Flat Squares
+      Topic Filter: true
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Flat Squares
+      Topic: /kinect/depth/points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -353,7 +390,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.065062522888184
+      Distance: 3.948831558227539
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -361,17 +398,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.45594844222068787
-        Y: 0.8098962306976318
-        Z: -0.5416109561920166
+        X: 1.3010412454605103
+        Y: 0.21328148245811462
+        Z: -0.4985259473323822
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4297989308834076
+      Pitch: 0.29979899525642395
       Target Frame: base
-      Yaw: 4.260456562042236
+      Yaw: 4.36045503616333
     Saved:
       - Class: rviz/Orbit
         Distance: 1.6215763092041016
@@ -410,4 +447,4 @@ Window Geometry:
     collapsed: true
   Width: 1484
   X: 134
-  Y: 129
+  Y: 62

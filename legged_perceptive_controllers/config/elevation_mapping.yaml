@@ -5,7 +5,8 @@ robot_pose_with_covariance_topic: /pose
 input_sources:
   front: # A name to identify the input source
     type: pointcloud # Supported types: pointcloud
-    topic: /front_camera/depth/color/points
+    # topic: /front_camera/depth/color/points
+    topic: /kinect/depth/points
     queue_size: 1
     publish_on_update: true
     sensor_processor:

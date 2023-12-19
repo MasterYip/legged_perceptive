@@ -33,6 +33,10 @@
 
 1. realsense2_description do not have t265.stl (you should create a fake one)
 
+### Todo
+
+1. add d435 camera to gazebo simulator
+
 ### Run
 
 Launch gazbeo
@@ -52,11 +56,17 @@ Load the controller
 Switch the controller
 
 ```bash
-    rosservice call /controller_manager/switch_controller "start_controllers: ['controllers/perceptive_controller']
-    stop_controllers: ['']
-    strictness: 0
-    start_asap: false
-    timeout: 0.0"
+rosservice call /controller_manager/switch_controller "start_controllers: ['controllers/perceptive_controller']
+stop_controllers: ['']
+strictness: 0
+start_asap: false
+timeout: 0.0"
+```
+
+Or
+
+```bash
+rosrun rqt_controller_manager rqt_controller_manager
 ```
 
 Rviz
