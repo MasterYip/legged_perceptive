@@ -29,31 +29,34 @@
     git clone git@github.com:qiayuanliao/legged_perceptive.git
     catkin build legged_perceptive_description legged_perceptive_controllers
 
-### Bug report
-
-1. **realsense2_description DO NOT have t265.stl** (you should create a fake one)
-
-### Todo
-
-1. add d435 camera to gazebo simulator
 
 ### Run
 
-Launch gazbeo
+**Quick Launch**:
 
 ```bash
-    roslaunch legged_perceptive_description empty_world.launch
+roslaunch legged_perceptive_controllers quick_launch.launch
 ```
 
-- Note: Better to run under super user mode
+**Step-by-step**:
 
-Load the controller
+1.Launch gazbeo
 
 ```bash
-    roslaunch legged_perceptive_controllers load_controller.launch
+roslaunch legged_perceptive_description empty_world.launch
 ```
 
-Switch the controller
+> Note: Better to run under super user mode
+
+2.Load the controller
+
+```bash
+roslaunch legged_perceptive_controllers load_controller.launch
+```
+
+> Note: You can ignore the error message `Could not get pose information...`, it disapeared after the controller is switched.
+
+3.Switch the controller
 
 ```bash
 rosservice call /controller_manager/switch_controller "start_controllers: ['controllers/perceptive_controller']
@@ -69,6 +72,6 @@ Or
 rosrun rqt_controller_manager rqt_controller_manager
 ```
 
-Rviz
+4.Rviz
 
 Use legged_control default.rviz

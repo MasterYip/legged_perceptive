@@ -38,14 +38,14 @@
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://realsense2_description/meshes/t265.stl"/>
+                    <mesh filename="package://realsense2_description/meshes/d435.dae"/>
                 </geometry>
                 <material name="${name}_aluminum"/>
             </visual>
             <collision>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://realsense2_description/meshes/t265.stl"/>
+                    <mesh filename="package://realsense2_description/meshes/d435.dae"/>
                 </geometry>
             </collision>
             <inertial>
