@@ -6,14 +6,14 @@
 
 ### Dependency
 
-- GMP (sudo apt-get install libgmp-dev)
-- MPFR (sudo apt-get install libmpfr-dev)
+- GMP (`sudo apt-get install libgmp-dev`)
+- MPFR (`sudo apt-get install libmpfr-dev`)
 - [legged_control](https://github.com/qiayuanliao/legged_control): make sure you can run the legged_controllers in simulation or hardware;
 - [grid_map](https://github.com/ANYbotics/grid_map): NOTE that this is ANYbotics version, which only can install from source, instead of RSL version (apt install);
 - [elevation_mapping](https://github.com/ANYbotics/elevation_mapping);
 
-  - sensor-filters: sudo apt install ros-noetic-sensor-filters
-  - robot-body-filter: sudo apt install ros-noetic-robot-body-filter
+  - sensor-filters: `sudo apt install ros-noetic-sensor-filters`
+  - robot-body-filter: `sudo apt install ros-noetic-robot-body-filter`
   - \*[point_cloud_io](https://github.com/ANYbotics/point_cloud_io): from ANYbotics
   - message-logger: from ANYbotics
   - kindr/kindr_ros: from ANYbotics
@@ -31,7 +31,7 @@
 
 ### Bug report
 
-1. realsense2_description do not have t265.stl (you should create a fake one)
+1. **realsense2_description DO NOT have t265.stl** (you should create a fake one)
 
 ### Todo
 
